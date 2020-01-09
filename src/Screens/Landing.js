@@ -29,7 +29,7 @@ const Landing = observer(() => {
     
     { !store.Categories.length >=1 ?  <div key = "Actions" className = "Actions">   <AddCategory   /> </div>  
     : <div key = "Actions" className = "Actions">  
-    {selected ?   <> <EditCategory index = {selected} />
+    {selected  || selected==0  ?   <> <EditCategory index = {selected} />
     <button   onClick = { () => {  setSelected(null) ; store.removeCategory(selected)}}>Delete</button> </>
   : null}
     <AddCategory  />
