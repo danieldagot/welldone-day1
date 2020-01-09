@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import { observer } from "mobx-react-lite";
-import FaveStore from "../Stores/store";
+import CategoryStore from "../Stores/store";
 import AddCategory from "../Components/addCategory"
 import EditCategory from "../Components/editCategory"
 import "../Styles/Landing.css"
 
 const Landing = observer(() => {
-  const store = useContext(FaveStore);
+  const store = useContext(CategoryStore);
   useEffect(() => {
     setCategiris(store.Categories)
   });

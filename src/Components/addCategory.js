@@ -1,7 +1,7 @@
 import React, { useState, useEffect ,useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import "react-bootstrap"
-import FaveStore from "../Stores/store";
+import CategoryStore from "../Stores/store";
 
 function AddCategory () {
   const [show, setShow] = useState(false);
@@ -30,7 +30,7 @@ function AddCategory () {
 
   function AddCategotyBody(props) {
       const [input, setInput] = useState();
-      const store = useContext(FaveStore);
+      const store = useContext(CategoryStore);
       let sabmit = () => {
         if(!input)
         {

@@ -1,11 +1,11 @@
 import React, { useState, useEffect ,useContext } from "react";
-import FaveStore from "../Stores/store";
+import CategoryStore from "../Stores/store";
 import Modal from "react-bootstrap/Modal";
 
   function  EditCategory (props) {
     const [show, setShow] = useState(false);
     const [newName, setNewName] = useState();
-    const store = useContext(FaveStore);
+    const store = useContext(CategoryStore);
     if(!props.index && show == true){
     setShow(false)
     alert("Place select a category to edit")

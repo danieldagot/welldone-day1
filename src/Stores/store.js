@@ -1,7 +1,7 @@
 import { observable, computed, action, runInAction ,decorate} from "mobx";
 import axios from "axios";
 import { createContext } from 'react'
-export class faveStore {
+export class CategoryStore {
 @observable Locations = JSON.parse(localStorage.getItem("Locations")) || {}
 @observable Categories = JSON.parse(localStorage.getItem("Categories")) || []
 @action addCategory = (name) =>{
@@ -36,4 +36,4 @@ export class faveStore {
 }
 }
 
-export default createContext(new faveStore())
+export default createContext(new CategoryStore())

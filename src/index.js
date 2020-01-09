@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import FaveStore from  "./Stores/store"
+import CategoryStore from  "./Stores/store"
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'mobx-react'
 
-//let favestore = new FaveStore()
+//let CategoryStore = new CategoryStore()
 
-// const stores = {favestore }
+// const stores = {CategoryStore }
 // ReactDOM.render(<Provider {... stores}>
 //         <App />
 //     </Provider>, document.getElementById('root'));
