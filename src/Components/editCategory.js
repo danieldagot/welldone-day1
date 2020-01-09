@@ -17,7 +17,7 @@ import Modal from "react-bootstrap/Modal";
       let submit = () => {
         if(!newName)
         {
-          alert("the category name can not be empty")
+          alert("The category name can not be empty!")
         }
         else{
             store.editCategory(props.index,newName)
@@ -28,7 +28,7 @@ import Modal from "react-bootstrap/Modal";
     return (
       <>
         <button variant="outline-light" onClick={() => setShow(!show)}>
-          edit
+          Edit
         </button>
         <Modal
           size="lg"
@@ -37,7 +37,7 @@ import Modal from "react-bootstrap/Modal";
           aria-labelledby="example-modal-sizes-title-lg"
         >
           <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">edit category</Modal.Title>
+            <Modal.Title id="example-modal-sizes-title-lg">Edit Category</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           <input defaultValue ={store.Categories[props.index]} onChange ={(event)  => setNewName(event.target.value)} ></input> <button onClick = {() => submit()}> save changes </button>

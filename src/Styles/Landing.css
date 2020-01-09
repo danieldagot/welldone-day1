@@ -1,26 +1,49 @@
 
 
 .selectedCategory{
-    background-color: blue;
+    font-size: 2em;
+    border: 0.02vw solid black;
+    text-align: center;
+    /* background-color: rgb(153, 153, 153); */
+    background-color: gray;
 }
-
+.Category{
+    margin-bottom: 0.3vw;
+    border: 0.01vw solid black;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: lightgrey;
+}
+    
  .Actions button {
+    height: 100%;
     border: none;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 2em;
-    margin: 1%;
+    font-size: 1.5rem;
+    margin-left: 0.3%;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
-    background-color: royalblue;
+    background-color:  #00000038;
+    border-radius: 0.5vw;
      }
   .Actions button:hover {
-      background-color: red;
+      background-color:  rgba(77, 121, 255, 0.568);
+      border-radius: 0.75vw;
   }
+
+.header{
+    margin-right: 5%;
+    position: absolute;
+    padding-left: 0.25vw;
+}
 .Actions{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: #7f8fa6 ;
+    height: 2.7vw;
 }
+

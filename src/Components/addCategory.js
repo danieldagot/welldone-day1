@@ -8,7 +8,7 @@ function AddCategory () {
   return (
     <>
       <button  onClick={() => setShow(!show)}>
-        add category
+        Add Category
       </button>
       <Modal
         size="lg"
@@ -17,7 +17,7 @@ function AddCategory () {
         aria-labelledby="example-modal-sizes-title-lg"
       >
         <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">add category</Modal.Title>
+          <Modal.Title id="example-modal-sizes-title-lg">Add Category</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <AddCategotyBody setShow = {setShow}  />
@@ -43,8 +43,8 @@ function AddCategory () {
       }
       return (
         <>
-       <input type = "text" placeholder = "Category name" onChange = {e=> setInput(e.target.value)}></input>
-       <button onClick ={submit}>save</button>
+       <input type = "text" placeholder = "Category Name" onChange = {e=> setInput(e.target.value)}></input>
+       <button onClick ={submit}>Save</button>
         </>
       );
     }

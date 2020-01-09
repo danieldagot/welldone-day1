@@ -11,7 +11,7 @@ const Landing = observer(() => {
     setCategiris(store.Categories)
   });
   const [selected, setSelected] = useState();
-  const [categiris, setCategiris] = useState(store.Categories);
+  const [categories, setCategiris] = useState(store.Categories);
   const [edit, setEdit] = useState();
   const [newName, setNewName] = useState();
   const handleSelact =(index) => {
@@ -25,15 +25,18 @@ const Landing = observer(() => {
   }
   return (
     <>
-    <div> my categories  </div>
+    <h1 className ="header"> My Categories  </h1>
+    
     { !store.Categories.length >=1 ?  <div key = "Actions" className = "Actions">   <AddCategory   /> </div>  
-    : <div key = "Actions" className = "Actions">  <EditCategory index = {selected}  categories = {categiris}/>
-    <button> view details </button>
-    <button onClick = { () => {  setSelected(null) ; store.removeCategory(selected)}}>delete</button>
-    <AddCategory   />
+    : <div key = "Actions" className = "Actions">  
+    {selected ?   <> <EditCategory index = {selected} />
+    <button   onClick = { () => {  setSelected(null) ; store.removeCategory(selected)}}>Delete</button> </>
+  : null}
+    <AddCategory  />
+    <button> View Details </button>
      </div> }
 
-   { categiris.map((c,index) => <div key = {index} className =  {selected == index ?  "selectedCategory" : "Category" } onClick ={ () =>  handleSelact(index)} > {c}  </div> )}
+   { categories.map((c,index) => <div key = {index} className =  {selected == index ?  "selectedCategory" : "Category" } onClick ={ () =>  handleSelact(index)} > {c}  </div> )}
     </>
   )
 });
