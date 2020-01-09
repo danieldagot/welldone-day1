@@ -31,7 +31,7 @@ function AddCategory () {
   function AddCategotyBody(props) {
       const [input, setInput] = useState();
       const store = useContext(CategoryStore);
-      let sabmit = () => {
+      let submit = () => {
         if(!input)
         {
           alert("the category name can not be empty")
@@ -44,7 +44,7 @@ function AddCategory () {
       return (
         <>
        <input type = "text" placeholder = "Category name" onChange = {e=> setInput(e.target.value)}></input>
-       <button onClick ={sabmit}>save</button>
+       <button onClick ={submit}>save</button>
         </>
       );
     }

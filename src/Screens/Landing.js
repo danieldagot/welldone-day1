@@ -15,6 +15,7 @@ const Landing = observer(() => {
   const [edit, setEdit] = useState();
   const [newName, setNewName] = useState();
   const handleSelact =(index) => {
+    console.log(index);
   if(index == selected){
   setSelected()
   }
@@ -24,13 +25,14 @@ const Landing = observer(() => {
   }
   return (
     <>
-    <div> my categiris  </div>
-    <div key = "Actions" className = "Actions"> 
-    <EditCategory index = {selected}  categiris = {categiris}/>
+    <div> my categories  </div>
+    { !store.Categories.length >=1 ?  <div key = "Actions" className = "Actions">   <AddCategory   /> </div>  
+    : <div key = "Actions" className = "Actions">  <EditCategory index = {selected}  categories = {categiris}/>
     <button> view details </button>
     <button onClick = { () => {  setSelected(null) ; store.removeCategory(selected)}}>delete</button>
     <AddCategory   />
-     </div>
+     </div> }
+
    { categiris.map((c,index) => <div key = {index} className =  {selected == index ?  "selectedCategory" : "Category" } onClick ={ () =>  handleSelact(index)} > {c}  </div> )}
     </>
   )

@@ -1,24 +1,27 @@
 import React, { useState, useEffect ,useContext } from "react";
-import CategoryStore from "../Stores/store";
+import FaveStore from "../Stores/store";
 import Modal from "react-bootstrap/Modal";
 
   function  EditCategory (props) {
+    const store = useContext(FaveStore);
     const [show, setShow] = useState(false);
-    const [newName, setNewName] = useState();
-    const store = useContext(CategoryStore);
-    if(!props.index && show == true){
+    const [newName, setNewName] = useState(store.Categories[props.index])
+    if(!props.index && show == true  && props.index != 0){
+      console.log(props.index);
+      
     setShow(false)
     alert("Place select a category to edit")
     }
     useEffect  (() => {
       });
-      let sabmit = () => {
+      let submit = () => {
         if(!newName)
         {
           alert("the category name can not be empty")
         }
         else{
-            store.EditCategory(props.index,newName)
+            store.editCategory(props.index,newName)
+            setShow(false)
         }
       }
 
@@ -37,7 +40,7 @@ import Modal from "react-bootstrap/Modal";
             <Modal.Title id="example-modal-sizes-title-lg">edit category</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          <input defaultValue ={store.Categories[props.index]} onChange ={(event)  => setNewName(event.target.value)} ></input> <button onClick = {() => sabmit()}> save changes </button>
+          <input defaultValue ={store.Categories[props.index]} onChange ={(event)  => setNewName(event.target.value)} ></input> <button onClick = {() => submit()}> save changes </button>
           </Modal.Body>
         </Modal>
       </>
