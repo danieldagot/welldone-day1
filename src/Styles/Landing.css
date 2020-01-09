@@ -1,0 +1,26 @@
+
+
+.selectedCategory{
+    background-color: blue;
+}
+
+ .Actions button {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    margin: 1%;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: royalblue;
+     }
+  .Actions button:hover {
+      background-color: red;
+  }
+.Actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
