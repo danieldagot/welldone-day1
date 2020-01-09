@@ -2,45 +2,31 @@ import React, { useState, useEffect ,useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import "react-bootstrap"
 import FaveStore from "../Stores/store";
-function AddCategory () {
-    useEffect(() => {
 
-    });
-    
-    return (
-      <>
-      <CreateCategoryModal />  
-      </>
-    );
+function AddCategory () {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <button  onClick={() => setShow(!show)}>
+        add category
+      </button>
+      <Modal
+        size="lg"
+        show={show}
+        onHide={() => setShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">add category</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <AddCategotyBody setShow = {setShow}  />
+        </Modal.Body>
+      </Modal>
+    </>
+  );
   }
   export default AddCategory
-
-  function  CreateCategoryModal (props) {
-    const [show, setShow] = useState(false);
-
-    useEffect  (() => {
-      });
-    return (
-      <>
-        <button  onClick={() => setShow(!show)}>
-          add category
-        </button>
-        <Modal
-          size="lg"
-          show={show}
-          onHide={() => setShow(false)}
-          aria-labelledby="example-modal-sizes-title-lg"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">add category</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-          <AddCategotyBody setShow = {setShow}  />
-          </Modal.Body>
-        </Modal>
-      </>
-    );
-  }
 
   function AddCategotyBody(props) {
       const [input, setInput] = useState();
