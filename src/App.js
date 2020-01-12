@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import Landing from "./Screens/Landing"  ; 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Location from "./Screens/Locations"
 
 import "./App.css";
 import {
@@ -19,7 +20,8 @@ function App() {
     <>
     <Router>
       <div className="App">
-        <Route path="/" exact render={() => <Landing/>} />
+        <Route path="/" exact render={() => <Location/>} />
+        <Route path="/Locations" exact render={() => <Location />} />
       </div>
 
     </Router>
