@@ -25,7 +25,7 @@ const Landing = observer(() => {
   }
   return (
     <>
-    <h1 className ="header"> My Categories  </h1>
+    <h6 className ="header"> My Categories  </h6>
     
     { !store.Categories.length >=1 ?  <div key = "Actions" className = "Actions">   <AddCategory   /> </div>  
     : <div key = "Actions" className = "Actions">  
